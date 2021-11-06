@@ -1,0 +1,31 @@
+resources:
+
+# source repository containing
+# - concourse pipeline
+# - docker file with nginx container
+- name: concourse-nginx
+  type: git
+  source:
+    uri: https://github.com/rockhose/concourse-nginx.git
+    branch: develop
+
+# information required to connect to a docker registry and publish the image
+- name: nginx-docker-image
+  type: docker-image
+  source:
+    username: ((repository-username))
+    password: ((repository-password))
+    repository: ((repository-name))/nginx
+    insecure_registries: ["jfrog-platform-artifactory-nginx.jfrog-platform.svc.cluster.local:80"]
+    
+jobs:
+- name: publish
+  public: true
+  serial: true
+  plan:
+  # pull the github repository
+  - get: concourse-nginx
+  # build and push the docker image to the repository
+  - put: nginx-docker-image
+    params:
+      build: concourse-nginx
