@@ -22,7 +22,7 @@ fly --target concourse-nginx login --concourse-url http://<CONCOURSE_URL> -u <CO
 Deploy the pipeline to concourse: 
 
 ```
-fly -t nginx-test set-pipeline -p build-and-push-nginx \
+fly -t concourse-nginx set-pipeline -p build-and-push-nginx \
     -c pipeline.yml \
     --var repository-name=<REPOSITORY_URL> \
     --var registry-username=<REPOSITORY_USERNAME> \
