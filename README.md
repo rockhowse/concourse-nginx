@@ -24,7 +24,7 @@ Deploy the pipeline to concourse:
 ```
 fly -t concourse-nginx set-pipeline -p build-and-push-nginx \
     -c pipeline.yml \
-    --var registry-username=<REPOSITORY_USERNAME> \
-    --var registry-password=<REPOSITORY_PASSWORD> \
+    --var registry-username=<REGISTRY_USERNAME> \
+    --var registry-password=<REGISTRY_PASSWORD> \
     --var repository-name=<REPOSITORY_NAME>
 ```
