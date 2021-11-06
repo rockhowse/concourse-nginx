@@ -8,7 +8,7 @@ resources:
   icon: git
   source:
     uri: https://github.com/rockhowse/concourse-nginx.git
-    branch: develop
+    branch: main
 
 # information required to connect to a docker registry and publish the image
 - name: nginx-docker-image
