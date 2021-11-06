@@ -18,6 +18,8 @@ resources:
     username: ((registry-username))
     password: ((registry-password))
     repository: ((repository-name))/concourse-nginx
+    # this example assumes http connectivity to jfrog artifactory deployed using the default helm chart 
+    # it's using the CoreDNS default internal cluster DNS, which IS NOT SUITABLE FOR PRODUCTION
     insecure_registries: ["jfrog-platform-artifactory-nginx.jfrog-platform.svc.cluster.local:80"]
     
 jobs:
