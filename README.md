@@ -16,7 +16,7 @@ This repo assumes you have the following configured and have the ability to acce
 Set up target in concourse:
 
 ```
-fly --target nginx-test login --concourse-url http://<CONCOURSE_URL> -u <CONCOURSE_USERNAME> -p <CONCOURSE_PASSWORD>
+fly --target concourse-nginx login --concourse-url http://<CONCOURSE_URL> -u <CONCOURSE_USERNAME> -p <CONCOURSE_PASSWORD>
 ```
 
 Deploy the pipeline to concourse: 
