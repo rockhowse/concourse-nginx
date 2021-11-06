@@ -5,6 +5,7 @@ resources:
 # - docker file with nginx container
 - name: concourse-nginx
   type: git
+  icon: git
   source:
     uri: https://github.com/rockhose/concourse-nginx.git
     branch: develop
@@ -12,10 +13,11 @@ resources:
 # information required to connect to a docker registry and publish the image
 - name: nginx-docker-image
   type: docker-image
+  icon: docker
   source:
-    username: ((repository-username))
-    password: ((repository-password))
-    repository: ((repository-name))/nginx
+    username: ((registry-username))
+    password: ((registry-password))
+    repository: ((repository-name))/concourse-nginx
     insecure_registries: ["jfrog-platform-artifactory-nginx.jfrog-platform.svc.cluster.local:80"]
     
 jobs:
