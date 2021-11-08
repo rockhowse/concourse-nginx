@@ -34,4 +34,4 @@ jobs:
   - put: nginx-docker-image
     params:
       build: concourse-nginx
-      additional_tags: ./additional_tags
+      additional_tags: additional_tags
