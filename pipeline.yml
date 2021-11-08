@@ -8,7 +8,7 @@ resources:
   icon: git
   source:
     uri: https://github.com/rockhowse/concourse-nginx.git
-    branch: main
+    branch: testing-additional-tags
 
 # information required to connect to a docker registry and publish the image
 - name: nginx-docker-image
@@ -34,4 +34,4 @@ jobs:
   - put: nginx-docker-image
     params:
       build: concourse-nginx
-      additional_tags: ./additional_tags
+      additional_tags: additional_tags
