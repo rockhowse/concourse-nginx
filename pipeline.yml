@@ -29,6 +29,7 @@ jobs:
   plan:
   # pull the github repository
   - get: concourse-nginx
+    trigger: true
   # build and push the docker image to the image repository
   - put: nginx-docker-image
     params:
