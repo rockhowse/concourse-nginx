@@ -7,7 +7,7 @@ resources:
   type: git
   icon: git
   source:
-    uri: https://github.com/rockhowse/concourse-nginx.git
+    uri: https://github.com/duelyy/concourse-nginx.git
     branch: main
 
 # information required to connect to a docker registry and publish the image
